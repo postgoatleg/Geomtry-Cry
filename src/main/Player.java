@@ -23,12 +23,12 @@ public class Player {
     }
 
     public void Jump() {
-        if(jumpStep <= 10) {
-            ChangeY((int)-Math.pow(jumpStep, 1.5));
+        if(jumpStep <= 20) {
+            ChangeY((int)-Math.pow(jumpStep, 1.1));
             jumpStep++;
         }
-        else if(jumpStep <= 20) {
-            ChangeY((int)Math.pow(jumpStep-10, 1.5));
+        else if(jumpStep <= 40) {
+            ChangeY((int)Math.pow(jumpStep-20, 1.1));
             jumpStep++;
         }
         else {
