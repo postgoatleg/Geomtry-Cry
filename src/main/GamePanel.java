@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class GamePanel extends JPanel {
-    private int gameSpeed = 20;
+    private int gameSpeed = 6;
     private Map map;
     private Timer timerSwing;
     private MouseInputs mouseInputs = new MouseInputs();
@@ -49,7 +49,7 @@ public class GamePanel extends JPanel {
         g.fillRect(0, 0, getWidth(), 500);
         g.setColor(map.fgColor);
         for(i = map.firstIndex; i< map.lastIndex; i++) {
-            g.fillRect(map.objects[i], 450, 50, 50);
+            g.fillRect(map.objects[i], 450, 100, 100);
         }
         g.fillRect(0, 500, getWidth(), getHeight()-500);
 

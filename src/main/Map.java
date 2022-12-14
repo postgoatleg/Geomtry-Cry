@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Map {
     Color bgColor;
@@ -16,10 +17,10 @@ public class Map {
         lastIndex = objNum;
         fillMap();
     }
-
+    Random rnd = new Random();
     public void fillMap() {
         for(int i = 0; i< objects.length; i++) {
-            objects[i] = ((int)Math.round(Math.random()))*i*100;
+            objects[i] = rnd.nextInt(300+i*300, 500+i*300)*((int)Math.round(Math.random()));
             System.out.println(objects[i]);
         }
     }
@@ -36,7 +37,7 @@ public class Map {
         firstIndex = i;
         while(objects[i] <= screenWidth && i < objects.length-1) i++;
         lastIndex = i;
-        if (firstIndex == lastIndex) endMap = true;
+        if (firstIndex == lastIndex && i+2 >= objects.length) endMap = true;
     }
 
 }
